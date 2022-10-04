@@ -78,3 +78,7 @@ In our code demo today we'll do the following:
 ### CSS Cheatsheet
 
 - [css everything cheatsheet](https://overapi.com/css){:target="_blank"}
+
+### Resources
+
+- [Data Types Replit](https://replit.com/@sheyna/UnwrittenPutridVerification#index.js)
