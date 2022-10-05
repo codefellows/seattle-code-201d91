@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+h2 {
+  font-size: 1.2rem;
+  color: #c15431;
+  margin-bottom: 1rem;
+}
+
+.picture {
+  width: 400px;
+  padding: 30px;
+  border: 10px solid #c15431;
+  background-color: #c2d091;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+div {
+  border: 1px solid black;
+  padding: 25px;
+  margin: 25px;
+  display: inline-block;
+  /* float: left; */
+}
+
+p {
+  background-color: pink;
+  /* how to escape a float above this p tag: */
+  /* clear: both; */
+}
+
+span {
+  color: red;
+  font-size: 2rem;
+}
+
+/*
+  What elements are block or inline by default:
+  https://www.w3schools.com/html/html_blocks.asp
+*/
+
+.parent {
+  width: 80%;
+  margin: auto;
+}
+
+
+h3 {
+  font-size: 3rem;
+  background-color: bisque;
+  /* text-align: center; */
+  margin: auto;
+  width: max-content;
+  padding: 10px;
+}

@@ -42,3 +42,8 @@ This class is a highly conceptual. We will be diving deeper into **control flow*
 1. What is control flow in JavaScript?
 
 1. What is a loop? What is an iteration?
+
+## Resources
+
+- [Replit: Quiz with remaining guesses, While and Do While loops](https://replit.com/@sheyna/CriticalVigilantObjectdatabase#index.js)
+- [Replit: Arrays and For loops](https://replit.com/@sheyna/DramaticRoundProblem#index.js)
