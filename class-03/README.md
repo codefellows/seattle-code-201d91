@@ -47,3 +47,4 @@ This class is a highly conceptual. We will be diving deeper into **control flow*
 
 - [Replit: Quiz with remaining guesses, While and Do While loops](https://replit.com/@sheyna/CriticalVigilantObjectdatabase#index.js)
 - [Replit: Arrays and For loops](https://replit.com/@sheyna/DramaticRoundProblem#index.js)
+- [What HTML Elements are Default Block or Inline?](https://www.w3schools.com/html/html_blocks.asp)
