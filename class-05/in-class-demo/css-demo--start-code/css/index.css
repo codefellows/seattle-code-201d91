@@ -1,0 +1,56 @@
+
+div, span {
+  border: 1px solid gray;
+}
+h1 {
+  font-size: 2rem;
+}
+
+div.car {
+  border: 2px solid red;
+}
+
+/* select any span that has a parent div */
+div span {
+  background-color: orange;
+}
+
+/* direct child selector */
+div > span {
+  background-color: pink;;
+}
+
+/* general sibling selector - will select any sibling span of a section */
+section ~ span {
+  background-color: magenta;
+}
+
+/* Adjacent sibling selector - will select any span that comes directly after a section*/
+section + span {
+  background-color: green;
+}
+
+li:first-child {
+  color: blue;
+  font-weight: bold;
+}
+
+li:nth-child(2) {
+  color: purple;
+  font-weight: bold;
+}
+
+span:first-of-type {
+  color: white;
+}
+
+ul:hover {
+  background-color: teal;
+}
+
+ul::before {
+  content: 'ul::before';
+}
+ul::after {
+  content: 'ul::after';
+}
