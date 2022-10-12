@@ -17,7 +17,7 @@ h1 {
   padding: 1rem;
   color:  rgb(112, 159, 165);
   border-bottom: 10px double rgb(112, 159, 165);
-  font-family: 'Special Elite', cursive;
+  font-family: 'Monoton', cursive;
 }
 
 main {
@@ -42,7 +42,7 @@ h3 {
   color: rgb(112, 159, 165);
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Monoton', cursive;
 }
 
 ul {
