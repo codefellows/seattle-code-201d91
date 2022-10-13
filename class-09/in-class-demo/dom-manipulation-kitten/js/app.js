@@ -128,75 +128,38 @@ for (let i = 0; i < kittenArray.length; i++) {
   // maybe add something together
 }
 
+// WORKING WITH FORM
 
-/*
-let jumper = {
-  name: 'Jumper',
-  about: 'Jumper is available for adoption',
-  src: 'images/jumper.jpeg',
-  alt: 'Jumper is available for adoption',
-  likes: ['cuddling', 'lazer pointer', 'catnip'],
-  listId: `${this.name}Likes`,
-  renderList: function() {
-    // render the list items only:
-    let kittenLikes = document.getElementById(this.listId)
-    for (let i = 0; i < this.likes.length; i++) {
-      let li = document.createElement('li');
-      li.textContent = `${this.name} likes ${this.likes[i]}`;
-      kittenLikes.appendChild(li);
-    }
-  },
-  render: function () {
-    // render the entire article
-    // TO ADD ELEMENTS TO THE DOM
-    // 1 - create the element (the html tag)
+// 1. window into the DOM
+let form = document.querySelector(`form`);
+console.log(form);
 
-    // declaring a variable to story the element that I will create
-    // call document.createElement
-    // pass it the name of the HTML element I want to create & put it in quotes
-    let art = document.createElement('article');
+// 3. Declar an event handler (a function)
+let handleSubmit = function(event) {
+  event.preventDefault();
+  console.log('the form submitted');
+  // nameKitten comes from the name attribute in the HTML:
+  console.log(event.target.nameKitten.value);
 
-    // 2 - given content (text? an image?, another element?)
+  let name = event.target.nameKitten.value;
+  let about = event.target.about.value;
+  let age = parseInt(event.target.age.value);
+  console.log(typeof age);
+  let photoURL = event.target.imageURL.value;
+  let photoAlt = event.target.imageAlt.value;
+  let fav1 = event.target.fav1.value;
+  let fav2 = event.target.fav1.value;
+  let fav3 = event.target.fav1.value;
 
-    // 3 - append it to the DOM
-    // kittenContainer is the parent element of the element we want add
-    // we call appendChild on the parent
-    // and pass in the element we want to add
-    kittenContainer.appendChild(art);
+  let likeArr = [fav1, fav2, fav3];
 
-    // h3
-    let headline3 = document.createElement('h3');
-    headline3.textContent = this.name;
-    art.appendChild(headline3);
-
-    // p
-    let p = document.createElement('p');
-    p.textContent = this.about
-    art.appendChild(p);
-
-    // ul
-    let ul = document.createElement('ul');
-    ul.id = this.listId;
-    art.appendChild(ul);
-
-    // img
-    let img = document.createElement('img');
-    img.src = this.src;
-    img.alt = this.alt;
-    art.appendChild(img);
-
-    this.renderList();
-  },
-
+  // function Kitten(name, about, src, alt, likes) {
+  let newKitty = new Kitten(name, about, photoURL, photoAlt, likeArr);
+  console.log(newKitty);
+  newKitty.render();
 }
 
+// 2. Add event listener
+// what type of event? Submit
 
-
-
-// let li = document.createElement('li');
-// li.textContent = `6am: ${seatte.someValueInAnArry[i]} cookies`;
-
-
-
-jumper.render();
-*/
+form.addEventListener('submit', handleSubmit)

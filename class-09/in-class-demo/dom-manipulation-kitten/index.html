@@ -29,26 +29,7 @@
             <th>3rd fav</th>
           </tr>
         </thead>
-        <tbody>
-          <!-- <tr>
-          <td>Data</td>
-          <td>Data</td>
-          <td>Data</td>
-          <td>Data</td>
-        </tr>
-        <tr>
-          <td>Data</td>
-          <td>Data</td>
-          <td>Data</td>
-          <td>Data</td>
-        </tr>
-        <tr>
-          <td>Data</td>
-          <td>Data</td>
-          <td>Data</td>
-          <td>Data</td>
-        </tr> -->
-        </tbody>
+        <tbody></tbody>
         <tfoot>
           <tr>
             <td>footer</td>
@@ -60,7 +41,47 @@
       </table>
     </section>
     <aside>
+      <form>
+        <fieldset>
+          <legend>Add A Kitten</legend>
+          <!-- One way to link an input -->
+          <!-- the value of For should match the ID of the input it goes with -->
+          <label for="kittenName">Kitten's name</label>
+          <input id="kittenName" type="text" placeholder="kitten's name" name="nameKitten" required>
 
+          <!-- Another way link an input -->
+          <label>Breed
+            <input type="text" name="kittenBreed">
+          </label>
+
+          <label>About Kitten
+            <textarea name="about"></textarea>
+          </label>
+
+          <label>Kitten's age in months
+            <input type="number" name="age">
+          </label>
+
+          <label>Photo URL
+            <input type="url" name="imageURL">
+          </label>
+
+          <label>Photo description
+            <input type="text" name="imageAlt">
+          </label>
+
+          <label>Kitten's favorite thing
+            <input type="text" name="fav1">
+          </label>
+          <label>Kitten's 2nd favorite thing
+            <input type="text" name="fav2">
+          </label>
+          <label>Kitten's 3rd favorite thing
+            <input type="text" name="fav3">
+          </label>
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
     </aside>
   </main>
   <footer>

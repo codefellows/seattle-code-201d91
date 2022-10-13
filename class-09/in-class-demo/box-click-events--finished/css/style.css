@@ -17,11 +17,7 @@ article {
   text-align-last: center;
   font-size: 30px;
   font-weight: bold;
-  border: 10px solid green;
-}
-
-article:hover {
-  cursor: pointer;
+  border: 10px solid green
 }
 
 p {
