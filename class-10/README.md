@@ -77,3 +77,10 @@ Learning how to **debug** your code will help you to better identify the errors 
   - Search for the icon you want
   — Click on the one you want
   - Copy the `<i>` tag and paste it in your HTML where you want the icon to go.
+
+## Schedule for today'
+
+- 12:15 - PPH
+- 1:30 - in Remo
+- 1:45 - start clock for 4 hours
+- 5:45 - turn in your work

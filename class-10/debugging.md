@@ -32,9 +32,3 @@ But we live in the real world. Errors happen.
 - Git — commit often (ACP often)
   - comparing Git Branches
 - VS undo button
-
-
-12:15 - PPH
-1:30 - in Remo
-1:45 - start clock for 4 hours
-5:45 - turn in your work
