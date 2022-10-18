@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('hi');
+// console.log('hi');
 
 
 
@@ -43,13 +43,15 @@ console.log('hi');
 
 let myContainer = document.querySelector('section');
 let resultBtn = document.querySelector('section + div');
-let results = document.querySelector('ul');
+// let results = document.querySelector('ul');
 
 let image1 = document.querySelector('section img:first-child');
 let image2 = document.querySelector('section img:nth-child(2)');
 
 let howManyTimesUserHasVoted = 0;
 let maxNumberOfVotes = 15;
+
+let indexArray = [];
 
 // console.log(image2.src);
 
@@ -63,7 +65,10 @@ function Goat(name, fileExtension = 'jpg') {
   this.views = 0;
 }
 
-let cruisin = new Goat('cruisin-goat', 'png');
+let cruisin = new Goat(
+  'cruisin-goat',
+  'png'
+);
 let float = new Goat('float-your-goat');
 let hand = new Goat('goat-out-of-hand');
 let kissing = new Goat('kissing-goat');
@@ -74,7 +79,7 @@ let sweater = new Goat('sweater-goat');
 // image2.src = sassy.src;
 
 let allGoats = [cruisin, float, hand, kissing, sassy, smile, sweater];
-console.log(allGoats);
+// console.log(allGoats);
 
 // image2.src = allGoats[6].src;
 
@@ -85,18 +90,30 @@ function selectRandomGoat() {
 }
 
 function renderGoats() {
-  let goat1 = selectRandomGoat(); // 2
-  let goat2 = selectRandomGoat(); // 2
-  console.log(goat1, goat2);
-  // seriously consider using an array
-  // remember: how do you find out if an array includes something?
-  // google it
 
-  while (goat1 === goat2) {
-    goat2 = selectRandomGoat(); // 2
-    console.log(goat1, goat2);
+  while (indexArray.length < 4) {
+    let ranNum = selectRandomGoat();
+    if (!indexArray.includes(ranNum)) {
+      indexArray.push(ranNum);
+    }
   }
+  console.log(indexArray);
+  let goat1 = indexArray.shift();
+  let goat2 = indexArray.shift();
 
+  // let goat1 = selectRandomGoat(); // 2
+  // let goat2 = selectRandomGoat(); // 2
+  // // console.log(goat1, goat2);
+  // // seriously consider using an array
+  // // remember: how do you find out if an array includes something?
+  // // google it
+
+  // while (goat1 === goat2) {
+  //   goat2 = selectRandomGoat(); // 2
+  //   // console.log(goat1, goat2);
+  // }
+
+  // console.log(goat1, goat2);
 
   image1.src = allGoats[goat1].src;
   image1.alt = allGoats[goat1].name;
@@ -108,11 +125,11 @@ function renderGoats() {
 }
 
 function renderResults() {
-  for (let i = 0; i < allGoats.length; i++) {
-    let li = document.createElement('li');
-    li.textContent = `${allGoats[i].name} had ${allGoats[i].views} views and ${allGoats[i].score} votes`;
-    results.appendChild(li);
-  }
+  // for (let i = 0; i < allGoats.length; i++) {
+  //   let li = document.createElement('li');
+  //   li.textContent = `${allGoats[i].name} had ${allGoats[i].views} views and ${allGoats[i].score} votes`;
+  //   results.appendChild(li);
+  // }
 }
 
 
@@ -120,25 +137,89 @@ function handleClick(event) {
   if (event.target === myContainer) {
     alert('Please click on an image')
   }
-  console.log(event.target.alt);
+  // console.log(event.target.alt);
   howManyTimesUserHasVoted++;
   let clickedGoat = event.target.alt;
 
   for (let i = 0; i < allGoats.length; i++) {
     if (event.target.alt === allGoats[i].name) {
-      console.log(allGoats[i]);
+      // console.log(allGoats[i]);
       allGoats[i].score++;
       break;
     }
   }
   if (howManyTimesUserHasVoted === maxNumberOfVotes) {
     myContainer.removeEventListener('click', handleClick);
-    resultBtn.className = 'clicks-allowed';
-    resultBtn.addEventListener('click', renderResults)
+    // resultBtn.className = 'clicks-allowed';
+    // resultBtn.addEventListener('click', renderResults);
+    renderChart();
   } else {
     renderGoats();
   }
 }
+
+// const labels = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Gray'];
+
+
+function renderChart() {
+
+  let goatNames = [];
+  let goatViews = [];
+  let goatScore = [];
+  for (let i = 0; i < allGoats.length; i++) {
+    goatNames.push(allGoats[i].name);
+    goatViews.push(allGoats[i].views);
+    goatScore.push(allGoats[i].score);
+  }
+  // console.log(goatNames);
+
+  const data = {
+    labels: goatNames,
+    datasets: [
+      {
+        label: '# of views',
+        data: goatViews,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)'
+        ],
+        borderColor: [
+          'rgb(255, 99, 132)'
+        ],
+        borderWidth: 1
+      },
+      {
+        label: '# of votes',
+        data: goatScore,
+        backgroundColor: [
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgb(255, 159, 64)'
+        ],
+        borderWidth: 1
+      }
+    ]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    },
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+}
+
 
 
 myContainer.addEventListener('click', handleClick);
