@@ -47,3 +47,9 @@ In this class you are going to be introduced to CSS animations, and transitionin
   - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
   - [Eric Elliott's articles on Medium](https://medium.com/@_ericelliott)
   - [What is "this" in JavaScript?](https://www.javascripttutorial.net/javascript-this/)
+
+## Resources
+
+- [Color contrast tester](https://webaim.org/resources/contrastchecker/)
+- [Color blindness simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/)
+- [Also useful to help screen readers: create a skip content link](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
